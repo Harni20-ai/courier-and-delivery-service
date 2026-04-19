@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | SwiftDelivery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body style="background-color: var(--color-bg); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: var(--spacing-4);">
+
+    <div class="card" style="width: 100%; max-width: 500px; padding: var(--spacing-12);">
+        <div class="text-center mb-8">
+            <a href="index.html" class="logo mb-4" style="justify-content: center; font-size: 2rem;">
+                <i class="fas fa-truck-fast"></i>
+                <span>SwiftDelivery</span>
+            </a>
+            <h2>Create an Account</h2>
+            <p>Join our delivery community today.</p>
+        </div>
+
+        <!-- Social Signup -->
+        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: var(--spacing-4); margin-bottom: var(--spacing-8);">
+            <button class="btn btn-outline" style="gap: var(--spacing-2); font-size: 0.9rem;">
+                <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" alt="Google" style="width: 18px;"> Google
+            </button>
+            <button class="btn btn-outline" style="gap: var(--spacing-2); font-size: 0.9rem;">
+                <i class="fab fa-facebook" style="color: #1877F2; font-size: 1.2rem;"></i> Facebook
+            </button>
+        </div>
+
+        <div class="flex-center mb-8" style="gap: var(--spacing-4); color: var(--color-text-secondary); font-size: 0.8rem;">
+            <hr style="flex: 1; border: 0; border-top: 1px solid var(--color-border);">
+            OR
+            <hr style="flex: 1; border: 0; border-top: 1px solid var(--color-border);">
+        </div>
+
+        <!-- Register Form -->
+        <form action="user-dashboard.html">
+            <div class="form-group">
+                <label class="form-label">Full Name</label>
+                <input type="text" class="form-control" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Email Address</label>
+                <input type="email" class="form-control" placeholder="name@company.com" required>
+            </div>
+            <div class="grid" style="grid-template-columns: 1fr 1fr; gap: var(--spacing-4);">
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" placeholder="••••••••" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" placeholder="••••••••" required>
+                </div>
+            </div>
+            
+            <div class="form-group flex" style="gap: var(--spacing-2); align-items: flex-start; margin-top: var(--spacing-4);">
+                <input type="checkbox" id="terms" required style="margin-top: 5px;">
+                <label for="terms" style="font-size: 0.875rem; cursor: pointer;">
+                    I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-8" style="width: 100%; padding: 14px;">Create Account</button>
+        </form>
+
+        <p class="text-center mt-8" style="font-size: 0.9rem;">
+            Already have an account? <a href="login.html" style="font-weight: 600;">Login now</a>
+        </p>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
