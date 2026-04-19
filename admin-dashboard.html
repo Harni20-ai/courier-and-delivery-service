@@ -12,12 +12,18 @@
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
     <style>
+        html { scroll-behavior: smooth; }
         .admin-layout { display: grid; grid-template-columns: 280px 1fr; min-height: 100vh; }
         .sidebar { background: #1e293b; color: white; padding: var(--spacing-8); display: flex; flex-direction: column; }
         .sidebar-link { padding: var(--spacing-4); border-radius: var(--radius-md); color: #94a3b8; font-weight: 500; display: flex; align-items: center; gap: var(--spacing-3); transition: all var(--transition-fast); }
         .sidebar-link:hover, .sidebar-link.active { background: rgba(255, 255, 255, 0.05); color: white; }
-        .admin-content { padding: var(--spacing-12); background: #f1f5f9; }
-        .stat-card { background: white; padding: var(--spacing-6); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+        /* Use variables for dynamic background colors */
+        .admin-content { padding: var(--spacing-12); background: var(--color-bg); }
+        .stat-card { background: var(--color-surface); padding: var(--spacing-6); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border: 1px solid var(--color-border); }
+        
+        /* Dark mode overrides for sidebar if needed */
+        body.dark-mode .admin-content { background: var(--color-bg); }
+        body.dark-mode .stat-card { background: var(--color-surface); border-color: var(--color-border); }
     </style>
 </head>
 <body>
@@ -26,10 +32,11 @@
             <div class="logo mb-12" style="color: white;"><i class="fas fa-truck-fast"></i> <span>SwiftAdmin</span></div>
             <nav style="flex: 1;">
                 <a href="admin-dashboard.html" class="sidebar-link active"><i class="fas fa-gauge-high"></i> Dashboard</a>
-                <a href="#" class="sidebar-link"><i class="fas fa-calendar-check"></i> Bookings</a>
-                <a href="#" class="sidebar-link"><i class="fas fa-users"></i> Users</a>
+                <a href="#bookings" class="sidebar-link"><i class="fas fa-calendar-check"></i> Bookings</a>
+                <a href="#users" class="sidebar-link"><i class="fas fa-users"></i> Users</a>
                 <a href="admin-settings.html" class="sidebar-link"><i class="fas fa-gear"></i> Settings</a>
             </nav>
+            <a href="login.html" class="sidebar-link" style="color: #ef4444; margin-top: auto;"><i class="fas fa-right-from-bracket"></i> Logout</a>
         </aside>
 
         <main class="admin-content">
@@ -43,27 +50,27 @@
                         </label>
                     </div>
                     <button id="rtl-toggle" class="btn btn-outline" title="Switch RTL/LTR"><i class="fas fa-globe"></i></button>
-                    <img src="https://ui-avatars.com/api/?name=Admin" style="width: 40px; border-radius: 50%;">
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=4f46e5&color=fff" style="width: 40px; border-radius: 50%;">
                 </div>
             </header>
 
             <div class="grid" style="grid-template-columns: repeat(4, 1fr); gap: var(--spacing-6);">
                 <div class="stat-card">
-                    <p>Total Revenue</p>
+                    <p style="color: var(--color-text-secondary);">Total Revenue</p>
                     <h2>$42,850.00</h2>
-                    <span style="color: #10b981;"><i class="fas fa-arrow-up"></i> +12.5%</span>
+                    <span style="color: #10b981; font-size: 0.8rem;"><i class="fas fa-arrow-up"></i> +12.5%</span>
                 </div>
                 <div class="stat-card">
-                    <p>Active Bookings</p>
+                    <p style="color: var(--color-text-secondary);">Active Bookings</p>
                     <h2>156</h2>
-                    <span style="color: #10b981;"><i class="fas fa-arrow-up"></i> +4.2%</span>
+                    <span style="color: #10b981; font-size: 0.8rem;"><i class="fas fa-arrow-up"></i> +4.2%</span>
                 </div>
                 <div class="stat-card">
-                    <p>Total Drivers</p>
+                    <p style="color: var(--color-text-secondary);">Total Drivers</p>
                     <h2>48</h2>
                 </div>
                 <div class="stat-card">
-                    <p>CSAT</p>
+                    <p style="color: var(--color-text-secondary);">CSAT Score</p>
                     <h2>4.9/5</h2>
                 </div>
             </div>
@@ -71,6 +78,70 @@
             <div class="card mt-12">
                 <h3>Revenue Analytics</h3>
                 <div style="height: 350px;"><canvas id="adminRevenueChart"></canvas></div>
+            </div>
+
+            <!-- All Bookings Section -->
+            <div id="bookings" class="card mt-12">
+                <div class="flex-between mb-8">
+                    <h3>Manage All Bookings</h3>
+                    <div class="flex" style="gap: var(--spacing-2);">
+                        <button class="btn btn-outline" style="padding: 5px 15px;">Filter</button>
+                        <button class="btn btn-primary" style="padding: 5px 15px;">Export</button>
+                    </div>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="text-align: left; border-bottom: 1px solid var(--color-border);">
+                                <th style="padding: var(--spacing-4);">Order ID</th>
+                                <th style="padding: var(--spacing-4);">Customer</th>
+                                <th style="padding: var(--spacing-4);">Destination</th>
+                                <th style="padding: var(--spacing-4);">Status</th>
+                                <th style="padding: var(--spacing-4);">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--color-border);">
+                                <td style="padding: var(--spacing-4);">#SD-9921</td>
+                                <td style="padding: var(--spacing-4);">Jane Smith</td>
+                                <td style="padding: var(--spacing-4);">Seattle, WA</td>
+                                <td style="padding: var(--spacing-4);"><span class="badge" style="background: #dcfce7; color: #166534;">Delivered</span></td>
+                                <td style="padding: var(--spacing-4);"><button class="btn btn-outline" style="padding: 4px 8px; font-size: 0.75rem;">Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: var(--spacing-4);">#SD-9920</td>
+                                <td style="padding: var(--spacing-4);">Tom Hardy</td>
+                                <td style="padding: var(--spacing-4);">Miami, FL</td>
+                                <td style="padding: var(--spacing-4);"><span class="badge" style="background: #fef9c3; color: #854d0e;">Pending</span></td>
+                                <td style="padding: var(--spacing-4);"><button class="btn btn-primary" style="padding: 4px 8px; font-size: 0.75rem;">Assign</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- User Management Section -->
+            <div id="users" class="card mt-12">
+                <div class="flex-between mb-8">
+                    <h3>User Management</h3>
+                    <button class="btn btn-primary" style="padding: 5px 15px;"><i class="fas fa-user-plus"></i> Add User</button>
+                </div>
+                <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--spacing-6);">
+                    <div class="stat-card flex" style="gap: var(--spacing-4); align-items: center;">
+                        <img src="https://ui-avatars.com/api/?name=Alice+Wonder&background=random" style="width: 50px; border-radius: 50%;">
+                        <div>
+                            <strong>Alice Wonder</strong>
+                            <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 0;">Premium Client</p>
+                        </div>
+                    </div>
+                    <div class="stat-card flex" style="gap: var(--spacing-4); align-items: center;">
+                        <img src="https://ui-avatars.com/api/?name=Bob+Sponge&background=random" style="width: 50px; border-radius: 50%;">
+                        <div>
+                            <strong>Bob Sponge</strong>
+                            <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 0;">Regular Client</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
     </div>
@@ -96,7 +167,11 @@
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    animation: { duration: 2500, easing: 'easeOutBounce' }
+                    animation: { duration: 2500, easing: 'easeOutBounce' },
+                    scales: {
+                        y: { ticks: { color: getComputedStyle(document.body).getPropertyValue('--color-text-secondary') } },
+                        x: { ticks: { color: getComputedStyle(document.body).getPropertyValue('--color-text-secondary') } }
+                    }
                 }
             });
         });

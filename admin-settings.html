@@ -16,7 +16,9 @@
         .sidebar { background: #1e293b; color: white; padding: var(--spacing-8); display: flex; flex-direction: column; }
         .sidebar-link { padding: var(--spacing-4); border-radius: var(--radius-md); color: #94a3b8; font-weight: 500; display: flex; align-items: center; gap: var(--spacing-3); transition: all var(--transition-fast); }
         .sidebar-link:hover, .sidebar-link.active { background: rgba(255, 255, 255, 0.05); color: white; }
-        .admin-content { padding: var(--spacing-12); background: #f1f5f9; }
+        .admin-content { padding: var(--spacing-12); background: var(--color-bg); }
+        
+        body.dark-mode .admin-content { background: var(--color-bg); }
     </style>
 </head>
 <body>
@@ -25,8 +27,8 @@
             <div class="logo mb-12" style="color: white;"><i class="fas fa-truck-fast"></i> <span>SwiftAdmin</span></div>
             <nav style="flex: 1;">
                 <a href="admin-dashboard.html" class="sidebar-link"><i class="fas fa-gauge-high"></i> Dashboard</a>
-                <a href="#" class="sidebar-link"><i class="fas fa-calendar-check"></i> Bookings</a>
-                <a href="#" class="sidebar-link"><i class="fas fa-users"></i> Users</a>
+                <a href="admin-dashboard.html#bookings" class="sidebar-link"><i class="fas fa-calendar-check"></i> Bookings</a>
+                <a href="admin-dashboard.html#users" class="sidebar-link"><i class="fas fa-users"></i> Users</a>
                 <a href="admin-settings.html" class="sidebar-link active"><i class="fas fa-gear"></i> Settings</a>
             </nav>
         </aside>
@@ -42,7 +44,7 @@
                         </label>
                     </div>
                     <button id="rtl-toggle" class="btn btn-outline" title="Switch RTL/LTR"><i class="fas fa-globe"></i></button>
-                    <img src="https://ui-avatars.com/api/?name=Admin" style="width: 40px; border-radius: 50%;">
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=4f46e5&color=fff" style="width: 40px; border-radius: 50%;">
                 </div>
             </header>
 
