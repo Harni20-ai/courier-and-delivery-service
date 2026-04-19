@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard | SwiftAdmin</title>
+    <title>Admin Settings | SwiftAdmin</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
@@ -17,7 +17,6 @@
         .sidebar-link { padding: var(--spacing-4); border-radius: var(--radius-md); color: #94a3b8; font-weight: 500; display: flex; align-items: center; gap: var(--spacing-3); transition: all var(--transition-fast); }
         .sidebar-link:hover, .sidebar-link.active { background: rgba(255, 255, 255, 0.05); color: white; }
         .admin-content { padding: var(--spacing-12); background: #f1f5f9; }
-        .stat-card { background: white; padding: var(--spacing-6); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
     </style>
 </head>
 <body>
@@ -25,16 +24,16 @@
         <aside class="sidebar">
             <div class="logo mb-12" style="color: white;"><i class="fas fa-truck-fast"></i> <span>SwiftAdmin</span></div>
             <nav style="flex: 1;">
-                <a href="admin-dashboard.html" class="sidebar-link active"><i class="fas fa-gauge-high"></i> Dashboard</a>
+                <a href="admin-dashboard.html" class="sidebar-link"><i class="fas fa-gauge-high"></i> Dashboard</a>
                 <a href="#" class="sidebar-link"><i class="fas fa-calendar-check"></i> Bookings</a>
                 <a href="#" class="sidebar-link"><i class="fas fa-users"></i> Users</a>
-                <a href="admin-settings.html" class="sidebar-link"><i class="fas fa-gear"></i> Settings</a>
+                <a href="admin-settings.html" class="sidebar-link active"><i class="fas fa-gear"></i> Settings</a>
             </nav>
         </aside>
 
         <main class="admin-content">
             <header class="flex-between mb-12">
-                <h1>Overview</h1>
+                <h1>System Settings</h1>
                 <div class="flex" style="gap: var(--spacing-4);">
                     <div class="theme-switch-wrapper">
                         <label class="theme-switch" for="theme-toggle">
@@ -47,59 +46,29 @@
                 </div>
             </header>
 
-            <div class="grid" style="grid-template-columns: repeat(4, 1fr); gap: var(--spacing-6);">
-                <div class="stat-card">
-                    <p>Total Revenue</p>
-                    <h2>$42,850.00</h2>
-                    <span style="color: #10b981;"><i class="fas fa-arrow-up"></i> +12.5%</span>
-                </div>
-                <div class="stat-card">
-                    <p>Active Bookings</p>
-                    <h2>156</h2>
-                    <span style="color: #10b981;"><i class="fas fa-arrow-up"></i> +4.2%</span>
-                </div>
-                <div class="stat-card">
-                    <p>Total Drivers</p>
-                    <h2>48</h2>
-                </div>
-                <div class="stat-card">
-                    <p>CSAT</p>
-                    <h2>4.9/5</h2>
-                </div>
-            </div>
-
-            <div class="card mt-12">
-                <h3>Revenue Analytics</h3>
-                <div style="height: 350px;"><canvas id="adminRevenueChart"></canvas></div>
+            <div class="card">
+                <h3>General Configuration</h3>
+                <form class="mt-8">
+                    <div class="form-group">
+                        <label class="form-label">Company Name</label>
+                        <input type="text" class="form-control" value="SwiftDelivery Courier Service">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">System Email</label>
+                        <input type="email" class="form-control" value="admin@swiftdelivery.com">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Maintenance Mode</label>
+                        <select class="form-control">
+                            <option>Disabled</option>
+                            <option>Enabled</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-4">Update System</button>
+                </form>
             </div>
         </main>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="assets/js/main.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const ctx = document.getElementById('adminRevenueChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
-                    datasets: [{
-                        label: 'Revenue ($)',
-                        data: [12000, 15000, 18000, 16000, 21000, 25000, 23000, 28000, 32000, 42850],
-                        borderColor: '#4f46e5',
-                        backgroundColor: 'rgba(79, 70, 229, 0.1)',
-                        fill: true,
-                        tension: 0.4
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    animation: { duration: 2500, easing: 'easeOutBounce' }
-                }
-            });
-        });
-    </script>
 </body>
 </html>
