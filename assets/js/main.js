@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initRTLSuspension(); // Demo logic for RTL
     initScrollEffects();
+    initActiveLinks();
 });
 
 /**
@@ -104,6 +105,28 @@ function initScrollEffects() {
 
     document.querySelectorAll('.reveal').forEach(el => {
         observer.observe(el);
+    });
+}
+
+/**
+ * Auto-highlight active nav link
+ */
+function initActiveLinks() {
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.nav-link, .dropdown-content a');
+    
+    navLinks.forEach(link => {
+        const linkPath = link.getAttribute('href');
+        if (linkPath === currentPath) {
+            link.classList.add('active');
+            // If it's inside a dropdown, also highlight the parent
+            const dropdown = link.closest('.dropdown');
+            if (dropdown) {
+                dropdown.querySelector('.nav-link').classList.add('active');
+            }
+        } else {
+            link.classList.remove('active');
+        }
     });
 }
 

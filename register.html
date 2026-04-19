@@ -12,69 +12,107 @@
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
 </head>
-<body style="background-color: var(--color-bg); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: var(--spacing-4);">
+<body>
 
-    <div class="card" style="width: 100%; max-width: 500px; padding: var(--spacing-12);">
-        <div class="text-center mb-8">
-            <a href="index.html" class="logo mb-4" style="justify-content: center; font-size: 2rem;">
-                <i class="fas fa-truck-fast"></i>
-                <span>SwiftDelivery</span>
-            </a>
-            <h2>Create an Account</h2>
-            <p>Join our delivery community today.</p>
-        </div>
-
-        <!-- Social Signup -->
-        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: var(--spacing-4); margin-bottom: var(--spacing-8);">
-            <button class="btn btn-outline" style="gap: var(--spacing-2); font-size: 0.9rem;">
-                <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" alt="Google" style="width: 18px;"> Google
-            </button>
-            <button class="btn btn-outline" style="gap: var(--spacing-2); font-size: 0.9rem;">
-                <i class="fab fa-facebook" style="color: #1877F2; font-size: 1.2rem;"></i> Facebook
-            </button>
-        </div>
-
-        <div class="flex-center mb-8" style="gap: var(--spacing-4); color: var(--color-text-secondary); font-size: 0.8rem;">
-            <hr style="flex: 1; border: 0; border-top: 1px solid var(--color-border);">
-            OR
-            <hr style="flex: 1; border: 0; border-top: 1px solid var(--color-border);">
-        </div>
-
-        <!-- Register Form -->
-        <form action="user-dashboard.html">
-            <div class="form-group">
-                <label class="form-label">Full Name</label>
-                <input type="text" class="form-control" placeholder="John Doe" required>
+    <header class="header">
+        <div class="container nav">
+            <a href="index.html" class="logo"><i class="fas fa-truck-fast"></i> <span>SwiftDelivery</span></a>
+            <nav class="nav-links">
+                <div class="dropdown">
+                    <a href="#" class="nav-link">Home <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="index.html">Home 1 (Modern)</a>
+                        <a href="home-2.html">Home 2 (Creative)</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="nav-link">Dashboard <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="user-dashboard.html">User Dashboard</a>
+                        <a href="admin-dashboard.html">Admin Dashboard</a>
+                    </div>
+                </div>
+                <a href="booking.html" class="nav-link">Book Now</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="theme-toggle">
+                        <input type="checkbox" id="theme-toggle" />
+                        <div class="slider round"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></div>
+                    </label>
+                </div>
+                <button id="rtl-toggle" class="btn btn-outline" title="Switch RTL/LTR"><i class="fas fa-globe"></i></button>
+                <a href="login.html" class="btn btn-primary">Login</a>
             </div>
-            <div class="form-group">
-                <label class="form-label">Email Address</label>
-                <input type="email" class="form-control" placeholder="name@company.com" required>
+        </div>
+    </header>
+
+    <main class="section flex-center" style="min-height: 80vh;">
+        <div class="card" style="width: 100%; max-width: 500px; padding: var(--spacing-12);">
+            <div class="text-center mb-8">
+                <h2>Create an Account</h2>
+                <p>Join our delivery community today.</p>
             </div>
-            <div class="grid" style="grid-template-columns: 1fr 1fr; gap: var(--spacing-4);">
+
+            <!-- Social Signup -->
+            <div class="grid" style="grid-template-columns: 1fr 1fr; gap: var(--spacing-4); margin-bottom: var(--spacing-8);">
+                <button class="btn btn-outline" style="gap: var(--spacing-2); font-size: 0.9rem;">
+                    <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" alt="Google" style="width: 18px;"> Google
+                </button>
+                <button class="btn btn-outline" style="gap: var(--spacing-2); font-size: 0.9rem;">
+                    <i class="fab fa-facebook" style="color: #1877F2; font-size: 1.2rem;"></i> Facebook
+                </button>
+            </div>
+
+            <div class="flex-center mb-8" style="gap: var(--spacing-4); color: var(--color-text-secondary); font-size: 0.8rem;">
+                <hr style="flex: 1; border: 0; border-top: 1px solid var(--color-border);">
+                OR
+                <hr style="flex: 1; border: 0; border-top: 1px solid var(--color-border);">
+            </div>
+
+            <!-- Register Form -->
+            <form action="user-dashboard.html">
                 <div class="form-group">
-                    <label class="form-label">Password</label>
-                    <input type="password" class="form-control" placeholder="••••••••" required>
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-control" placeholder="John Doe" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Confirm Password</label>
-                    <input type="password" class="form-control" placeholder="••••••••" required>
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-control" placeholder="name@company.com" required>
                 </div>
-            </div>
-            
-            <div class="form-group flex" style="gap: var(--spacing-2); align-items: flex-start; margin-top: var(--spacing-4);">
-                <input type="checkbox" id="terms" required style="margin-top: 5px;">
-                <label for="terms" style="font-size: 0.875rem; cursor: pointer;">
-                    I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
-                </label>
-            </div>
+                <div class="grid" style="grid-template-columns: 1fr 1fr; gap: var(--spacing-4);">
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" placeholder="••••••••" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" placeholder="••••••••" required>
+                    </div>
+                </div>
+                <div class="form-group flex" style="gap: var(--spacing-2); align-items: flex-start; margin-top: var(--spacing-4);">
+                    <input type="checkbox" id="terms" required style="margin-top: 5px;">
+                    <label for="terms" style="font-size: 0.875rem; cursor: pointer;">
+                        I agree to the <a href="terms.html">Terms of Service</a> and Privacy Policy.
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary mt-8" style="width: 100%; padding: 14px;">Create Account</button>
+            </form>
+            <p class="text-center mt-8" style="font-size: 0.9rem;">
+                Already have an account? <a href="login.html" style="font-weight: 600;">Login now</a>
+            </p>
+        </div>
+    </main>
 
-            <button type="submit" class="btn btn-primary mt-8" style="width: 100%; padding: 14px;">Create Account</button>
-        </form>
-
-        <p class="text-center mt-8" style="font-size: 0.9rem;">
-            Already have an account? <a href="login.html" style="font-weight: 600;">Login now</a>
-        </p>
-    </div>
+    <footer class="footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 SwiftDelivery Courier Service. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="assets/js/main.js"></script>
 </body>

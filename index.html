@@ -28,7 +28,7 @@
 <body>
 
     <!-- Header -->
-    <header class="header">
+        <header class="header">
         <div class="container nav">
             <a href="index.html" class="logo">
                 <i class="fas fa-truck-fast"></i>
@@ -36,16 +36,28 @@
             </a>
             
             <nav class="nav-links">
-                <div class="dropdown"><a href="#" class="nav-link active">Home <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a><div class="dropdown-content"><a href="index.html">Home 1 (Modern)</a><a href="home-2.html">Home 2 (Creative)</a></div></div>
+                <div class="dropdown">
+                    <a href="#" class="nav-link">Home <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="index.html">Home 1 (Modern)</a>
+                        <a href="home-2.html">Home 2 (Creative)</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="nav-link">Dashboard <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="user-dashboard.html">User Dashboard</a>
+                        <a href="admin-dashboard.html">Admin Dashboard</a>
+                    </div>
+                </div>
                 <a href="booking.html" class="nav-link">Book Now</a>
                 <a href="services.html" class="nav-link">Services</a>
-                <a href="gallery.html" class="nav-link">Gallery</a><div class="dropdown"><a href="#" class="nav-link">Dashboard <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a><div class="dropdown-content"><a href="user-dashboard.html">User Dashboard</a><a href="admin-dashboard.html">Admin Dashboard</a></div></div>
+                <a href="gallery.html" class="nav-link">Gallery</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="contact.html" class="nav-link">Contact</a>
             </nav>
             
             <div class="nav-actions">
-                <!-- Theme Toggle -->
                 <div class="theme-switch-wrapper">
                     <label class="theme-switch" for="theme-toggle">
                         <input type="checkbox" id="theme-toggle" />
@@ -55,19 +67,13 @@
                         </div>
                     </label>
                 </div>
-                
-                <!-- RTL Toggle (Globe Icon) -->
                 <button id="rtl-toggle" class="btn btn-outline" title="Switch RTL/LTR" style="padding: 8px 12px; font-size: 0.9rem;">
                     <i class="fas fa-globe"></i>
                 </button>
-                
                 <a href="login.html" class="btn btn-primary">Login</a>
-                
             </div>
             
-            <button class="mobile-toggle" aria-label="Toggle Navigation">
-                <i class="fas fa-bars"></i>
-            </button>
+            <button class="mobile-toggle"><i class="fas fa-bars"></i></button>
         </div>
     </header>
 
@@ -208,3 +214,4 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+
