@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs | SwiftDelivery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav">
+            <a href="index.html" class="logo"><i class="fas fa-truck-fast"></i> <span>SwiftDelivery</span></a>
+            <nav class="nav-links">
+                <div class="dropdown">
+                    <a href="#" class="nav-link">Home <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="index.html">Home 1 (Modern)</a>
+                        <a href="home-2.html">Home 2 (Creative)</a>
+                    </div>
+                </div>
+                <a href="booking.html" class="nav-link">Book Now</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="theme-toggle">
+                        <input type="checkbox" id="theme-toggle" />
+                        <div class="slider round"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></div>
+                    </label>
+                </div>
+                <button id="rtl-toggle" class="btn btn-outline" title="Switch RTL/LTR"><i class="fas fa-globe"></i></button>
+                <a href="login.html" class="btn btn-primary">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+            <div class="text-center mb-16">
+                <span class="badge">Common Questions</span>
+                <h1>Frequently Asked Questions</h1>
+                <p>Everything you need to know about our services and process.</p>
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--spacing-4);">
+                <div class="card reveal" style="padding: var(--spacing-6);">
+                    <h3 style="font-size: 1.25rem;">How fast is the Express Delivery?</h3>
+                    <p class="mb-0">Our Express Delivery typically takes 60-90 minutes within the same city, depending on traffic and package size.</p>
+                </div>
+                <div class="card reveal" style="padding: var(--spacing-6); transition-delay: 0.1s;">
+                    <h3 style="font-size: 1.25rem;">Do you provide international shipping?</h3>
+                    <p class="mb-0">Yes, we partner with global logistics leaders to provide seamless international shipping to over 250+ partners worldwide.</p>
+                </div>
+                <div class="card reveal" style="padding: var(--spacing-6); transition-delay: 0.2s;">
+                    <h3 style="font-size: 1.25rem;">How can I track my package?</h3>
+                    <p class="mb-0">You can track your package in real-time through your User Dashboard or by entering your Tracking ID on our tracking page.</p>
+                </div>
+                <div class="card reveal" style="padding: var(--spacing-6); transition-delay: 0.3s;">
+                    <h3 style="font-size: 1.25rem;">What are your operating hours?</h3>
+                    <p class="mb-0">We operate 24/7, 365 days a year to ensure your packages get to where they need to be, anytime.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 SwiftDelivery Courier Service. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
