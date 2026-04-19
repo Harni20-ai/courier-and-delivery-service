@@ -1,0 +1,49 @@
+/* ==========================================================================
+   RTL Mode Styles
+   ========================================================================== */
+
+body[dir="rtl"] {
+  text-align: right;
+}
+
+body[dir="rtl"] .logo {
+  flex-direction: row-reverse;
+}
+
+body[dir="rtl"] .nav-links {
+  padding-right: 0;
+  padding-left: inherit;
+}
+
+body[dir="rtl"] .hero-grid {
+  direction: rtl;
+}
+
+body[dir="rtl"] .hero-shape-1 {
+  right: auto;
+  left: -5%;
+}
+
+body[dir="rtl"] .hero-shape-2 {
+  left: auto;
+  right: -5%;
+}
+
+body[dir="rtl"] .footer-links {
+  padding-right: 0;
+}
+
+body[dir="rtl"] .btn {
+  /* Adjust icon spacing if any */
+}
+
+/* Form inputs in RTL */
+body[dir="rtl"] .form-control {
+  text-align: right;
+}
+
+/* Margin and Padding utilities override for RTL could be added here */
+body[dir="rtl"] .ml-4 { margin-left: 0; margin-right: var(--spacing-4); }
+body[dir="rtl"] .mr-4 { margin-right: 0; margin-left: var(--spacing-4); }
+body[dir="rtl"] .pl-4 { padding-left: 0; padding-right: var(--spacing-4); }
+body[dir="rtl"] .pr-4 { padding-right: 0; padding-left: var(--spacing-4); }

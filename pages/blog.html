@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & News | SwiftDelivery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav">
+            <a href="index.html" class="logo"><i class="fas fa-truck-fast"></i> <span>SwiftDelivery</span></a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="booking.html" class="nav-link">Book Now</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="blog.html" class="nav-link active">Blog</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h1>Logistics Insights</h1>
+                <p>Stay updated with the latest news in shipping and delivery technology.</p>
+            </div>
+
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+                <!-- Blog Post 1 -->
+                <article class="card reveal" style="padding: 0; overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaad5b?auto=format&fit=crop&q=80&w=800" style="width: 100%; height: 200px; object-fit: cover;" alt="Blog 1">
+                    <div style="padding: var(--spacing-6);">
+                        <span class="badge">Technology</span>
+                        <h3 class="mt-2">How AI is Revolutionizing Urban Logistics</h3>
+                        <p style="font-size: 0.9rem;">Exploring how artificial intelligence optimizes delivery routes and reduces fuel consumption in busy cities.</p>
+                        <a href="#" class="btn btn-outline" style="padding: 5px 15px; font-size: 0.8rem;">Read More</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="card reveal" style="padding: 0; overflow: hidden; transition-delay: 0.1s;">
+                    <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=800" style="width: 100%; height: 200px; object-fit: cover;" alt="Blog 2">
+                    <div style="padding: var(--spacing-6);">
+                        <span class="badge">Business</span>
+                        <h3 class="mt-2">5 Tips for Better E-commerce Shipping</h3>
+                        <p style="font-size: 0.9rem;">Practical advice for small business owners on how to streamline their shipping processes and improve customer satisfaction.</p>
+                        <a href="#" class="btn btn-outline" style="padding: 5px 15px; font-size: 0.8rem;">Read More</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="card reveal" style="padding: 0; overflow: hidden; transition-delay: 0.2s;">
+                    <img src="https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&q=80&w=800" style="width: 100%; height: 200px; object-fit: cover;" alt="Blog 3">
+                    <div style="padding: var(--spacing-6);">
+                        <span class="badge">Sustainability</span>
+                        <h3 class="mt-2">The Future is Green: Our Electric Fleet</h3>
+                        <p style="font-size: 0.9rem;">Learn about SwiftDelivery's commitment to reducing our carbon footprint through the expansion of our electric vehicle fleet.</p>
+                        <a href="#" class="btn btn-outline" style="padding: 5px 15px; font-size: 0.8rem;">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 SwiftDelivery Courier Service. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

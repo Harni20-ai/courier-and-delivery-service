@@ -1,0 +1,60 @@
+/* ==========================================================================
+   Dark Mode Styles
+   ========================================================================== */
+
+body.dark-mode {
+  /* Colors Override */
+  --color-bg: #0f172a;
+  --color-surface: #1e293b;
+  --color-surface-hover: #334155;
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #94a3b8;
+  --color-border: #334155;
+  
+  /* Buttons Override */
+  --color-primary-hover: #6366f1;
+  
+  /* Shadows Override */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-subtle: 0 8px 20px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Specific Dark Mode Adjustments */
+body.dark-mode .btn-secondary {
+  background: #334155;
+  color: #f8fafc;
+}
+
+body.dark-mode .btn-secondary:hover {
+  background: #475569;
+}
+
+body.dark-mode .badge {
+  background: rgba(79, 70, 229, 0.2);
+  color: #818cf8;
+}
+
+body.dark-mode .header {
+  background-color: rgba(30, 41, 59, 0.9);
+}
+
+body.dark-mode .form-control {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+body.dark-mode .form-control:focus {
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* Images and Media adjustments for dark mode */
+body.dark-mode img:not(.hero-shape) {
+  opacity: 0.9; /* Slight dimming for better contrast */
+  transition: opacity 0.3s ease;
+}
+
+body.dark-mode img:not(.hero-shape):hover {
+  opacity: 1;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Availability Calendar | SwiftDelivery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <style>
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: var(--spacing-2);
+        }
+        .calendar-day {
+            aspect-ratio: 1;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-2);
+            position: relative;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        .calendar-day:hover:not(.disabled) {
+            background: var(--color-surface-hover);
+            border-color: var(--color-primary);
+        }
+        .calendar-day.disabled {
+            background: var(--color-bg);
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .calendar-day.active {
+            background: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+        }
+        .day-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-align: center;
+            padding-bottom: var(--spacing-2);
+        }
+        .availability-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #10b981;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav">
+            <a href="index.html" class="logo"><i class="fas fa-truck-fast"></i> <span>SwiftDelivery</span></a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="booking.html" class="nav-link">Book Now</a>
+                <a href="calendar.html" class="nav-link active">Availability</a>
+                <a href="services.html" class="nav-link">Services</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h1>Service Availability</h1>
+                <p>Check our pickup availability in your area.</p>
+            </div>
+
+            <div class="grid" style="grid-template-columns: 2fr 1fr;">
+                <!-- Calendar -->
+                <div class="card">
+                    <div class="flex-between mb-6">
+                        <h3>October 2026</h3>
+                        <div class="flex" style="gap: var(--spacing-2);">
+                            <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-chevron-left"></i></button>
+                            <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="calendar-grid">
+                        <div class="day-label">Sun</div><div class="day-label">Mon</div><div class="day-label">Tue</div><div class="day-label">Wed</div><div class="day-label">Thu</div><div class="day-label">Fri</div><div class="day-label">Sat</div>
+                        
+                        <div class="calendar-day disabled">27</div><div class="calendar-day disabled">28</div><div class="calendar-day disabled">29</div><div class="calendar-day disabled">30</div>
+                        <div class="calendar-day">1 <div class="availability-dot"></div></div>
+                        <div class="calendar-day">2 <div class="availability-dot"></div></div>
+                        <div class="calendar-day">3</div>
+                        
+                        <div class="calendar-day">4</div>
+                        <div class="calendar-day active">5 <div class="availability-dot" style="background: white;"></div></div>
+                        <div class="calendar-day">6 <div class="availability-dot"></div></div>
+                        <div class="calendar-day">7 <div class="availability-dot"></div></div>
+                        <div class="calendar-day">8 <div class="availability-dot"></div></div>
+                        <div class="calendar-day">9 <div class="availability-dot"></div></div>
+                        <div class="calendar-day">10</div>
+                    </div>
+                </div>
+
+                <!-- Slots -->
+                <div class="card">
+                    <h3>Available Slots</h3>
+                    <p class="mb-6">Monday, Oct 5</p>
+                    <div class="grid" style="gap: var(--spacing-4);">
+                        <div class="card" style="padding: var(--spacing-4); border-color: var(--color-primary); cursor: pointer;">
+                            <div class="flex-between">
+                                <strong>09:00 - 11:00</strong>
+                                <span class="badge">Available</span>
+                            </div>
+                        </div>
+                        <div class="card" style="padding: var(--spacing-4); cursor: pointer;">
+                            <div class="flex-between">
+                                <strong>11:00 - 13:00</strong>
+                                <span class="badge">Available</span>
+                            </div>
+                        </div>
+                        <div class="card" style="padding: var(--spacing-4); opacity: 0.6;">
+                            <div class="flex-between">
+                                <strong>14:00 - 16:00</strong>
+                                <span class="badge" style="background: #fee2e2; color: #ef4444;">Booked</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <a href="booking.html" class="btn btn-primary" style="width: 100%;">Continue to Booking</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 SwiftDelivery Courier Service. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

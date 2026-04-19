@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftDelivery | Fast & Reliable Courier Service</title>
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="SwiftDelivery provides modern, reliable, and fast courier and delivery services for businesses and individuals. Book your delivery today!">
+    <meta name="keywords" content="courier, delivery service, shipping, express delivery, SwiftDelivery">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    
+    <!-- Favicon Placeholder -->
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav">
+            <a href="index.html" class="logo">
+                <i class="fas fa-truck-fast"></i>
+                <span>SwiftDelivery</span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="booking.html" class="nav-link">Book Now</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <!-- Theme Toggle -->
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="theme-toggle">
+                        <input type="checkbox" id="theme-toggle" />
+                        <div class="slider round">
+                            <i class="fas fa-sun"></i>
+                            <i class="fas fa-moon"></i>
+                        </div>
+                    </label>
+                </div>
+                
+                <!-- RTL Toggle (Demo) -->
+                <button id="rtl-toggle" class="btn btn-outline" style="padding: 8px 12px; font-size: 0.8rem;">RTL</button>
+                
+                <a href="user-dashboard.html" class="btn btn-secondary">Login</a>
+                <a href="booking.html" class="btn btn-primary">Book Now</a>
+            </div>
+            
+            <button class="mobile-toggle" aria-label="Toggle Navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg-shapes">
+                <div class="hero-shape-1"></div>
+                <div class="hero-shape-2"></div>
+            </div>
+            <div class="container hero-grid">
+                <div class="hero-content reveal">
+                    <span class="badge">Fast & Reliable</span>
+                    <h1>Delivering Your Packages <span style="color: var(--color-primary);">Anywhere</span> Fast.</h1>
+                    <p>Experience the most reliable courier service in the city. Real-time tracking, secure handling, and lightning-fast delivery at your doorstep.</p>
+                    <div class="hero-actions">
+                        <a href="booking.html" class="btn btn-gradient btn-lg">Start Booking</a>
+                        <a href="services.html" class="btn btn-outline btn-lg">Explore Services</a>
+                    </div>
+                    <div class="hero-stats mt-8 flex" style="gap: var(--spacing-8);">
+                        <div class="stat-item">
+                            <h3 style="margin-bottom: 0;">10k+</h3>
+                            <p style="font-size: 0.875rem;">Deliveries</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 style="margin-bottom: 0;">500+</h3>
+                            <p style="font-size: 0.875rem;">Active Drivers</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 style="margin-bottom: 0;">4.9/5</h3>
+                            <p style="font-size: 0.875rem;">Rating</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image reveal" style="transition-delay: 0.2s;">
+                    <img src="C:\Users\admin\.gemini\antigravity\brain\0f826d6a-f908-4eaa-bab4-96fac87e0e66\hero_delivery_illustration_1776606519242.png" alt="Courier Delivery Illustration">
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section" style="background-color: var(--color-surface);">
+            <div class="container">
+                <div class="text-center mb-8 reveal">
+                    <h2>Why Choose SwiftDelivery?</h2>
+                    <p>We combine technology and efficiency to provide the best shipping experience.</p>
+                </div>
+                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                    <div class="card reveal">
+                        <div class="icon" style="font-size: 2.5rem; color: var(--color-primary); margin-bottom: var(--spacing-4);">
+                            <i class="fas fa-map-location-dot"></i>
+                        </div>
+                        <h3>Real-time Tracking</h3>
+                        <p>Track your packages in real-time from the moment they leave your hands until they reach their destination.</p>
+                    </div>
+                    <div class="card reveal" style="transition-delay: 0.1s;">
+                        <div class="icon" style="font-size: 2.5rem; color: var(--color-primary); margin-bottom: var(--spacing-4);">
+                            <i class="fas fa-shield-halved"></i>
+                        </div>
+                        <h3>Secure Handling</h3>
+                        <p>Our team ensures your packages are handled with the utmost care and security throughout the journey.</p>
+                    </div>
+                    <div class="card reveal" style="transition-delay: 0.2s;">
+                        <div class="icon" style="font-size: 2.5rem; color: var(--color-primary); margin-bottom: var(--spacing-4);">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>On-time Delivery</h3>
+                        <p>We pride ourselves on our punctuality. Your deadlines are our top priority, every single time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section">
+            <div class="container">
+                <div class="card text-center" style="background: var(--gradient-primary); color: white; padding: var(--spacing-16);">
+                    <h2 style="color: white;">Ready to send your first package?</h2>
+                    <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: var(--spacing-8); max-width: 600px; margin-left: auto; margin-right: auto;">
+                        Join thousands of satisfied customers who trust SwiftDelivery for their shipping needs.
+                    </p>
+                    <a href="booking.html" class="btn btn-secondary btn-lg" style="background: white; color: var(--color-primary);">Book Your Delivery Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <a href="index.html" class="logo mb-4">
+                        <i class="fas fa-truck-fast"></i>
+                        <span>SwiftDelivery</span>
+                    </a>
+                    <p>Modern and reliable courier services for the modern world. Fast, secure, and always on time.</p>
+                    <div class="social-links flex mt-4" style="gap: var(--spacing-4);">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="booking.html">Book a Delivery</a></li>
+                        <li><a href="user-dashboard.html">Track Package</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Contact Us</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-location-dot mr-2"></i> 123 Courier Way, City</li>
+                        <li><i class="fas fa-phone mr-2"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope mr-2"></i> info@swiftdelivery.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SwiftDelivery Courier Service. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/main.js"></script>
+    
+    <!-- Extra CSS for Toggle Switch -->
+    <style>
+        .theme-switch-wrapper {
+            display: flex;
+            align-items: center;
+        }
+        .theme-switch {
+            display: inline-block;
+            height: 34px;
+            position: relative;
+            width: 60px;
+        }
+        .theme-switch input { display:none; }
+        .slider {
+            background-color: #ccc;
+            bottom: 0;
+            cursor: pointer;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: .4s;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 0 5px;
+            color: white;
+            font-size: 0.8rem;
+        }
+        .slider:before {
+            background-color: white;
+            bottom: 4px;
+            content: "";
+            height: 26px;
+            left: 4px;
+            position: absolute;
+            transition: .4s;
+            width: 26px;
+            z-index: 2;
+        }
+        input:checked + .slider { background-color: var(--color-primary); }
+        input:checked + .slider:before { transform: translateX(26px); }
+        .slider.round { border-radius: 34px; }
+        .slider.round:before { border-radius: 50%; }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</body>
+</html>

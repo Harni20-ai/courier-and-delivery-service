@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | SwiftDelivery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <style>
+        .admin-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
+        }
+        .sidebar {
+            background: #1e293b;
+            color: white;
+            padding: var(--spacing-8);
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar-link {
+            padding: var(--spacing-4);
+            border-radius: var(--radius-md);
+            color: #94a3b8;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-3);
+            transition: all var(--transition-fast);
+        }
+        .sidebar-link:hover, .sidebar-link.active {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+        }
+        .admin-content {
+            padding: var(--spacing-12);
+            background: #f1f5f9;
+        }
+        .stat-card {
+            background: white;
+            padding: var(--spacing-6);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo mb-12" style="color: white;">
+                <i class="fas fa-truck-fast"></i>
+                <span>SwiftAdmin</span>
+            </div>
+            <nav style="flex: 1;">
+                <a href="#" class="sidebar-link active"><i class="fas fa-gauge-high"></i> Dashboard</a>
+                <a href="#" class="sidebar-link"><i class="fas fa-calendar-check"></i> Bookings</a>
+                <a href="#" class="sidebar-link"><i class="fas fa-users"></i> Users</a>
+                <a href="#" class="sidebar-link"><i class="fas fa-motorcycle"></i> Drivers</a>
+                <a href="#" class="sidebar-link"><i class="fas fa-file-invoice-dollar"></i> Reports</a>
+                <a href="#" class="sidebar-link"><i class="fas fa-gear"></i> Settings</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-content">
+            <header class="flex-between mb-12">
+                <h1>Overview</h1>
+                <div class="flex" style="gap: var(--spacing-4);">
+                    <div class="card" style="padding: 10px 20px; box-shadow: none;">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <div class="card" style="padding: 10px 20px; box-shadow: none;">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=4f46e5&color=fff" style="width: 40px; border-radius: 50%;">
+                </div>
+            </header>
+
+            <!-- Stats Grid -->
+            <div class="grid" style="grid-template-columns: repeat(4, 1fr); gap: var(--spacing-6);">
+                <div class="stat-card">
+                    <p style="color: var(--color-text-secondary); font-size: 0.875rem;">Total Revenue</p>
+                    <h2>$42,850.00</h2>
+                    <span style="color: #10b981; font-size: 0.75rem;"><i class="fas fa-arrow-up"></i> +12.5% this month</span>
+                </div>
+                <div class="stat-card">
+                    <p style="color: var(--color-text-secondary); font-size: 0.875rem;">Active Bookings</p>
+                    <h2>156</h2>
+                    <span style="color: #10b981; font-size: 0.75rem;"><i class="fas fa-arrow-up"></i> +4.2%</span>
+                </div>
+                <div class="stat-card">
+                    <p style="color: var(--color-text-secondary); font-size: 0.875rem;">Total Drivers</p>
+                    <h2>48</h2>
+                    <span style="color: var(--color-text-secondary); font-size: 0.75rem;">8 currently offline</span>
+                </div>
+                <div class="stat-card">
+                    <p style="color: var(--color-text-secondary); font-size: 0.875rem;">Customer Satisfaction</p>
+                    <h2>4.9/5</h2>
+                    <span style="color: #10b981; font-size: 0.75rem;">Excellent</span>
+                </div>
+            </div>
+
+            <!-- Recent Activity Table -->
+            <div class="card mt-12">
+                <div class="flex-between mb-8">
+                    <h3>Recent Bookings Management</h3>
+                    <div class="flex" style="gap: var(--spacing-2);">
+                        <button class="btn btn-outline" style="padding: 5px 15px;">Filter</button>
+                        <button class="btn btn-primary" style="padding: 5px 15px;">Export CSV</button>
+                    </div>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="text-align: left; border-bottom: 1px solid var(--color-border);">
+                                <th style="padding: var(--spacing-4);">Customer</th>
+                                <th style="padding: var(--spacing-4);">Destination</th>
+                                <th style="padding: var(--spacing-4);">Driver</th>
+                                <th style="padding: var(--spacing-4);">Status</th>
+                                <th style="padding: var(--spacing-4);">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--color-border);">
+                                <td style="padding: var(--spacing-4);">
+                                    <div class="flex" style="gap: var(--spacing-2);">
+                                        <img src="https://ui-avatars.com/api/?name=Alice&size=30" style="border-radius: 50%;">
+                                        <span>Alice Johnson</span>
+                                    </div>
+                                </td>
+                                <td style="padding: var(--spacing-4);">San Francisco, CA</td>
+                                <td style="padding: var(--spacing-4);">Mark Wilson</td>
+                                <td style="padding: var(--spacing-4);"><span class="badge" style="background: #dcfce7; color: #166534;">On Delivery</span></td>
+                                <td style="padding: var(--spacing-4);"><button class="btn btn-outline" style="padding: 4px 10px; font-size: 0.75rem;">Manage</button></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: var(--spacing-4);">
+                                    <div class="flex" style="gap: var(--spacing-2);">
+                                        <img src="https://ui-avatars.com/api/?name=Bob&size=30" style="border-radius: 50%;">
+                                        <span>Bob Miller</span>
+                                    </div>
+                                </td>
+                                <td style="padding: var(--spacing-4);">Los Angeles, CA</td>
+                                <td style="padding: var(--spacing-4);">Pending...</td>
+                                <td style="padding: var(--spacing-4);"><span class="badge" style="background: #fef9c3; color: #854d0e;">Pending Assign</span></td>
+                                <td style="padding: var(--spacing-4);"><button class="btn btn-primary" style="padding: 4px 10px; font-size: 0.75rem;">Assign Driver</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>

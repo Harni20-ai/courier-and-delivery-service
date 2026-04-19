@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard | SwiftDelivery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <style>
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
+        }
+        .sidebar {
+            background: var(--color-surface);
+            border-right: 1px solid var(--color-border);
+            padding: var(--spacing-8);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-4);
+        }
+        .sidebar-link {
+            padding: var(--spacing-3) var(--spacing-4);
+            border-radius: var(--radius-md);
+            color: var(--color-text-secondary);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-3);
+            transition: all var(--transition-fast);
+        }
+        .sidebar-link:hover, .sidebar-link.active {
+            background: rgba(79, 70, 229, 0.1);
+            color: var(--color-primary);
+        }
+        .dashboard-content {
+            padding: var(--spacing-12);
+            background: var(--color-bg);
+        }
+        .status-badge {
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .status-in-transit { background: #dcfce7; color: #166534; }
+        .status-pending { background: #fef9c3; color: #854d0e; }
+        
+        .tracking-timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        .tracking-timeline::before {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--color-border);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: var(--spacing-6);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            border: 2px solid white;
+        }
+        
+        @media (max-width: 1024px) {
+            .dashboard-layout { grid-template-columns: 1fr; }
+            .sidebar { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <a href="index.html" class="logo mb-8">
+                <i class="fas fa-truck-fast"></i>
+                <span>SwiftDelivery</span>
+            </a>
+            <nav style="flex: 1;">
+                <a href="#" class="sidebar-link active"><i class="fas fa-chart-line"></i> Overview</a>
+                <a href="#" class="sidebar-link"><i class="fas fa-box"></i> My Bookings</a>
+                <a href="#" class="sidebar-link"><i class="fas fa-heart"></i> Saved Addresses</a>
+                <a href="#" class="sidebar-link"><i class="fas fa-message"></i> Messages</a>
+                <a href="#" class="sidebar-link"><i class="fas fa-gear"></i> Settings</a>
+            </nav>
+            <a href="index.html" class="sidebar-link" style="color: #ef4444;"><i class="fas fa-right-from-bracket"></i> Logout</a>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <header class="flex-between mb-12">
+                <div>
+                    <h2>Welcome back, John!</h2>
+                    <p>You have 1 active package in transit.</p>
+                </div>
+                <div class="flex" style="gap: var(--spacing-4);">
+                    <button class="btn btn-outline" id="theme-toggle-btn"><i class="fas fa-moon"></i></button>
+                    <img src="https://ui-avatars.com/api/?name=John+Doe&background=4f46e5&color=fff" alt="User Avatar" style="width: 40px; height: 40px; border-radius: 50%;">
+                </div>
+            </header>
+
+            <div class="grid" style="grid-template-columns: 1fr 1fr; gap: var(--spacing-8);">
+                <!-- Active Tracking -->
+                <div class="card">
+                    <div class="flex-between mb-6">
+                        <h3>Active Tracking</h3>
+                        <span class="status-badge status-in-transit">In Transit</span>
+                    </div>
+                    <p>Tracking ID: <strong>SD-98234-AX</strong></p>
+                    <hr class="mb-6 mt-4" style="border: 0; border-top: 1px solid var(--color-border);">
+                    
+                    <div class="tracking-timeline">
+                        <div class="timeline-item">
+                            <strong>Out for Delivery</strong>
+                            <p style="font-size: 0.8rem; margin-bottom: 0;">Today, 10:30 AM - Your package is with our driver.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <strong>Arrived at Local Facility</strong>
+                            <p style="font-size: 0.8rem; margin-bottom: 0;">Oct 18, 11:45 PM - City Distribution Center</p>
+                        </div>
+                        <div class="timeline-item" style="opacity: 0.5;">
+                            <strong>In Transit</strong>
+                            <p style="font-size: 0.8rem; margin-bottom: 0;">Oct 18, 02:30 PM - Left Main Hub</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="grid" style="gap: var(--spacing-4);">
+                    <div class="card" style="padding: var(--spacing-6);">
+                        <div class="flex-between">
+                            <div>
+                                <p class="mb-1" style="font-size: 0.875rem;">Total Deliveries</p>
+                                <h3 style="margin-bottom: 0;">24</h3>
+                            </div>
+                            <i class="fas fa-truck-ramp-box" style="font-size: 1.5rem; color: var(--color-primary);"></i>
+                        </div>
+                    </div>
+                    <div class="card" style="padding: var(--spacing-6);">
+                        <div class="flex-between">
+                            <div>
+                                <p class="mb-1" style="font-size: 0.875rem;">Pending Payments</p>
+                                <h3 style="margin-bottom: 0;">$0.00</h3>
+                            </div>
+                            <i class="fas fa-wallet" style="font-size: 1.5rem; color: #10b981;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Booking History -->
+            <div class="card mt-12">
+                <div class="flex-between mb-6">
+                    <h3>Recent Bookings</h3>
+                    <a href="#" class="btn btn-outline" style="padding: 5px 15px; font-size: 0.8rem;">View All</a>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="text-align: left; border-bottom: 1px solid var(--color-border);">
+                                <th style="padding: var(--spacing-4);">ID</th>
+                                <th style="padding: var(--spacing-4);">Destination</th>
+                                <th style="padding: var(--spacing-4);">Date</th>
+                                <th style="padding: var(--spacing-4);">Status</th>
+                                <th style="padding: var(--spacing-4);">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--color-border);">
+                                <td style="padding: var(--spacing-4);">#SD-12345</td>
+                                <td style="padding: var(--spacing-4);">New York, NY</td>
+                                <td style="padding: var(--spacing-4);">Oct 12, 2026</td>
+                                <td style="padding: var(--spacing-4);"><span class="status-badge" style="background: #e5e7eb;">Delivered</span></td>
+                                <td style="padding: var(--spacing-4);"><a href="#" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.75rem;">Invoice</a></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: var(--spacing-4);">#SD-12300</td>
+                                <td style="padding: var(--spacing-4);">Chicago, IL</td>
+                                <td style="padding: var(--spacing-4);">Oct 05, 2026</td>
+                                <td style="padding: var(--spacing-4);"><span class="status-badge" style="background: #e5e7eb;">Delivered</span></td>
+                                <td style="padding: var(--spacing-4);"><a href="#" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.75rem;">Invoice</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
