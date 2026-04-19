@@ -114,7 +114,22 @@
                     <p>You have 1 active package in transit.</p>
                 </div>
                 <div class="flex" style="gap: var(--spacing-4);">
-                    <button class="btn btn-outline" id="theme-toggle-btn"><i class="fas fa-moon"></i></button>
+                    <!-- Theme Toggle -->
+                    <div class="theme-switch-wrapper">
+                        <label class="theme-switch" for="theme-toggle">
+                            <input type="checkbox" id="theme-toggle" />
+                            <div class="slider round">
+                                <i class="fas fa-sun"></i>
+                                <i class="fas fa-moon"></i>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <!-- RTL Toggle (Globe Icon) -->
+                    <button id="rtl-toggle" class="btn btn-outline" title="Switch RTL/LTR" style="padding: 8px 12px; font-size: 0.9rem;">
+                        <i class="fas fa-globe"></i>
+                    </button>
+
                     <img src="https://ui-avatars.com/api/?name=John+Doe&background=4f46e5&color=fff" alt="User Avatar" style="width: 40px; height: 40px; border-radius: 50%;">
                 </div>
             </header>
