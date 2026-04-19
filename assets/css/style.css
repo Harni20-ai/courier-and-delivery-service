@@ -446,6 +446,40 @@ ul {
 .mt-8 { margin-top: var(--spacing-8); }
 .mb-8 { margin-bottom: var(--spacing-8); }
 
+/* --- Dropdown Menu --- */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--color-surface);
+  min-width: 180px;
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-md);
+  z-index: 1000;
+  top: 100%;
+  left: 0;
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+.dropdown-content a {
+  color: var(--color-text);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 0.9rem;
+  transition: background var(--transition-fast);
+}
+.dropdown-content a:hover {
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 /* --- Theme Switch Toggle --- */
 .theme-switch-wrapper {
   display: flex;
