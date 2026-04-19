@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
     <style>
+        html { scroll-behavior: smooth; }
         .dashboard-layout { display: grid; grid-template-columns: 280px 1fr; min-height: 100vh; }
         .sidebar { background: var(--color-surface); border-right: 1px solid var(--color-border); padding: var(--spacing-8); display: flex; flex-direction: column; gap: var(--spacing-4); }
         .sidebar-link { padding: var(--spacing-3) var(--spacing-4); border-radius: var(--radius-md); color: var(--color-text-secondary); font-weight: 500; display: flex; align-items: center; gap: var(--spacing-3); transition: all var(--transition-fast); }
@@ -33,8 +34,8 @@
             <a href="index.html" class="logo mb-8"><i class="fas fa-truck-fast"></i> <span>SwiftDelivery</span></a>
             <nav style="flex: 1;">
                 <a href="user-dashboard.html" class="sidebar-link active"><i class="fas fa-chart-line"></i> Overview</a>
-                <a href="#" class="sidebar-link"><i class="fas fa-box"></i> My Bookings</a>
-                <a href="#" class="sidebar-link"><i class="fas fa-heart"></i> Saved Addresses</a>
+                <a href="#my-bookings" class="sidebar-link"><i class="fas fa-box"></i> My Bookings</a>
+                <a href="#saved-addresses" class="sidebar-link"><i class="fas fa-heart"></i> Saved Addresses</a>
                 <a href="user-settings.html" class="sidebar-link"><i class="fas fa-gear"></i> Settings</a>
             </nav>
             <a href="login.html" class="sidebar-link" style="color: #ef4444;"><i class="fas fa-right-from-bracket"></i> Logout</a>
@@ -91,6 +92,64 @@
             <div class="card mt-12">
                 <h3>Delivery Activity (Last 7 Days)</h3>
                 <div style="height: 300px;"><canvas id="userChart"></canvas></div>
+            </div>
+
+            <!-- My Bookings Section -->
+            <div id="my-bookings" class="card mt-12">
+                <div class="flex-between mb-8">
+                    <h3>My Bookings</h3>
+                    <button class="btn btn-outline" style="padding: 5px 15px;">Filter</button>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="text-align: left; border-bottom: 1px solid var(--color-border);">
+                                <th style="padding: var(--spacing-4);">Tracking ID</th>
+                                <th style="padding: var(--spacing-4);">Recipient</th>
+                                <th style="padding: var(--spacing-4);">Destination</th>
+                                <th style="padding: var(--spacing-4);">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--color-border);">
+                                <td style="padding: var(--spacing-4);">SD-12345-NY</td>
+                                <td style="padding: var(--spacing-4);">Sarah Jenkins</td>
+                                <td style="padding: var(--spacing-4);">Manhattan, NY</td>
+                                <td style="padding: var(--spacing-4);"><span class="status-badge status-in-transit">In Transit</span></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--color-border);">
+                                <td style="padding: var(--spacing-4);">SD-12290-LA</td>
+                                <td style="padding: var(--spacing-4);">Michael Ross</td>
+                                <td style="padding: var(--spacing-4);">Los Angeles, CA</td>
+                                <td style="padding: var(--spacing-4);"><span class="status-badge" style="background: #eef2ff; color: var(--color-primary);">Delivered</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Saved Addresses Section -->
+            <div id="saved-addresses" class="card mt-12">
+                <div class="flex-between mb-8">
+                    <h3>Saved Addresses</h3>
+                    <button class="btn btn-primary" style="padding: 5px 15px;"><i class="fas fa-plus"></i> Add New</button>
+                </div>
+                <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: var(--spacing-4);">
+                    <div style="border: 1px solid var(--color-border); padding: var(--spacing-4); border-radius: var(--radius-md);">
+                        <div class="flex-between mb-2">
+                            <strong><i class="fas fa-house-user"></i> Home</strong>
+                            <a href="#" style="font-size: 0.8rem;">Edit</a>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--color-text-secondary); margin-bottom: 0;">123 Broadway St, Suite 100, New York, NY 10001</p>
+                    </div>
+                    <div style="border: 1px solid var(--color-border); padding: var(--spacing-4); border-radius: var(--radius-md);">
+                        <div class="flex-between mb-2">
+                            <strong><i class="fas fa-briefcase"></i> Office</strong>
+                            <a href="#" style="font-size: 0.8rem;">Edit</a>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--color-text-secondary); margin-bottom: 0;">456 Tech Plaza, Floor 12, San Francisco, CA 94105</p>
+                    </div>
+                </div>
             </div>
         </main>
     </div>
